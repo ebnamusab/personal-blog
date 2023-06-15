@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+            {% block content %}
+
+            <!-- Page Header Start -->
+            <div class="container py-5 px-2 bg-primary">
+                <div class="row py-5 px-4">
+                    <div class="col-sm-6 text-center text-md-left">
+                        <h1 class="mb-3 mb-md-0 text-white text-uppercase font-weight-bold">{{blog.title}}</h1>
+                    </div>
+                    <div class="col-sm-6 text-center text-md-right">
+                        <div class="d-inline-flex pt-2">
+                            <h4 class="m-0 text-white"><a class="text-white" href="{% url 'index' %}">Home</a></h4>
+                            <h4 class="m-0 text-white px-2">/</h4>
+                            <h4 class="m-0 text-white">{{blog.title}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+            <!-- Blog Detail Start -->
+            <div class="container py-5 px-2 bg-white">
+                <div class="row px-4">
+                    <div class="col-12">
+                        <img class="img-fluid mb-4" src="{{blog.blog_image.url}}" alt="Image">
+                        <h2 class="mb-3 font-weight-bold">{{blog.title}}</h2>
+                        <div class="d-flex">
+                            <p class="mr-3 text-muted"><i class="fa fa-calendar-alt"></i>{{blog.publish_date}}</p>
+                            <p class="mr-3 text-muted"><i class="fa fa-folder"></i> {{blog.category}}</p>
+                            {% comment %} <p class="mr-3 text-muted"><i class="fa fa-comments"></i> 15 Comments</p> {% endcomment %}
+                        </div>
+                        <p>{{blog.description}}</p>
+
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+            <!-- Blog Detail End -->
+            {% endblock %}
